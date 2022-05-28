@@ -2,7 +2,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import serialize.AnswerSerialize;
 import serialize.CommandSerialize;
-import tools.CommandManager;
+import utils.CommandManager;
 import tools.ConsoleUI;
 
 import java.io.*;
@@ -30,9 +30,9 @@ class Server implements Runnable {
     public void run() {
 
         openServer();
-
+        connectToClient();
         while (true) {
-            connectToClient();
+
 
             try {
 

@@ -1,5 +1,7 @@
 import commands.*;
-import tools.*;
+import utils.CommandManager;
+import utils.CollectionManager;
+import tools.DataInput;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,7 +28,7 @@ public class Main {
                 new PrintParticipantsCommand(),
                collectionManager
         );
-        Server server = new Server(commandManager, 7001);
+        Server server = new Server(commandManager, 7002);
         server.run();
     }
 }

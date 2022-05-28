@@ -17,10 +17,6 @@ public class CommandSerialize implements Serializable {
 
     }
 
-    public CommandSerialize(String command, MusicBand musicBand){
-        this.musicBand = musicBand;
-    }
-
     public CommandSerialize(String command, String argument, MusicBand musicBand){
         this.command = command;
         this.argument = argument;

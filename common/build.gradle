@@ -17,5 +17,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-sourceCompatibility = '1.17'
-targetCompatibility = '1.17'

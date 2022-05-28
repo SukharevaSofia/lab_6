@@ -23,10 +23,10 @@ public class CommandFinder {
       try {
 
         String[] userCommand = ConsoleUI.reader.nextLine().split(" ");
-        List<String> commandsLen1 = List.of("help", "info", "show", "clear", "insert",
-                "remove_first", "history", "print_field_descending_front_man", "exit");
-        List<String> commandsLen2 = List.of("remove_by_id", "execute_script",
-                "remove_greater", "remove_all_by_description", "count_less_than_number_of_participants");
+        List<String> commandsLen1 = List.of("help", "info", "show", "clear",
+                "print_field_descending_number_of_participants", "exit");
+        List<String> commandsLen2 = List.of("remove_key", "remove_greater","replace_if_lower",
+                "remove_greater_key","count_greater_than_description", "filter_less_than_genre");
 
         if (userCommand.length > 2)
           throw new CommandException();
@@ -40,10 +40,14 @@ public class CommandFinder {
           }
 
           case (2):
-            if(commandsLen2.contains(userCommand[0])){
-              return new CommandSerialize(userCommand[0], userCommand[1]);
-            } else if(userCommand[0].equals("update")){
-              return new CommandSerialize(userCommand[0], userCommand[1], dataInput.askMusicBand());
+            if(userCommand.length == 2){
+              if(commandsLen2.contains(userCommand[0])){
+                return new CommandSerialize(userCommand[0], userCommand[1]);
+              } else if(userCommand[0].equals("update")){
+                return new CommandSerialize(userCommand[0], userCommand[1], dataInput.askMusicBand());
+              } else if(userCommand[0].equals( "insert")){
+                return new CommandSerialize(userCommand[0], userCommand[1], dataInput.askMusicBand());
+              }
             }
 
           default:
@@ -51,7 +55,6 @@ public class CommandFinder {
 
 
         }
-
 
 
       } catch (CommandException | IllegalArgumentException e) {

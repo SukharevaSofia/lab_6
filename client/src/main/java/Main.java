@@ -11,7 +11,7 @@ public class Main {
 
         DataInput dataInput = new DataInput();
         CommandFinder commandFinder = new CommandFinder(dataInput);
-        Client client = new Client(7001, "localhost", commandFinder);
+        Client client = new Client(7002, "localhost", commandFinder);
         client.run();
     }
 }

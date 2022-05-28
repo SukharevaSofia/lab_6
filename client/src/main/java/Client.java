@@ -14,7 +14,7 @@ public class Client implements Runnable {
     private SocketChannel socketChannel;
     private DatagramChannel datagramChannel;
     private CommandFinder commandFinder;
-    private ObjectOutputStream out; 
+    private ObjectOutputStream out;
     private ObjectInputStream in;
 
     public Client(int PORT, String HOST, CommandFinder commandFinder){
@@ -54,12 +54,11 @@ public class Client implements Runnable {
                     System.out.println("Cервер не отвечает");
                     Thread.sleep(5000L);
                 } catch (IOException e) {
-
-                    // FIXME: 5/28/22
+                    ConsoleUI.message("Ошибка работы");
                 }
             }
             catch (InterruptedException ignored){
-
+                ConsoleUI.message("Ошибка завершения работы");
             }
         }
 
@@ -73,11 +72,9 @@ public class Client implements Runnable {
             AnswerSerialize serverWords = (AnswerSerialize) in.readObject();
             ConsoleUI.output(serverWords.getMessage());
 
-        }catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        catch (ClassCastException e){
-
+        }catch (IOException | ClassNotFoundException | ClassCastException e) {
+            ConsoleUI.message("Ошибка работы клиента");
+            openClient();
         }
 
 
