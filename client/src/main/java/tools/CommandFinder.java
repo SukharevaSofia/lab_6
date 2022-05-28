@@ -23,7 +23,7 @@ public class CommandFinder {
       try {
 
         String[] userCommand = ConsoleUI.reader.nextLine().split(" ");
-        List<String> commandsLen1 = List.of("help", "info", "show", "clear",
+        List<String> commandsLen1 = List.of("help", "info", "show", "clear", "insert",
                 "remove_first", "history", "print_field_descending_front_man", "exit");
         List<String> commandsLen2 = List.of("remove_by_id", "execute_script",
                 "remove_greater", "remove_all_by_description", "count_less_than_number_of_participants");
@@ -36,9 +36,6 @@ public class CommandFinder {
           case(1):{
             if(commandsLen1.contains(userCommand[0])){
               return new CommandSerialize(userCommand[0]);
-            }
-            else if(userCommand[0].equals( "insert")){
-              return new CommandSerialize(userCommand[0], userCommand[1]);
             }
           }
 
