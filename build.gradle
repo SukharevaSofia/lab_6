@@ -21,7 +21,7 @@ subprojects {
 
 project(':server') {
     apply plugin: 'application'
-    mainClassName = 'server.ServerAppKt'
+    mainClassName = 'Main'
 
 
     dependencies {
@@ -33,7 +33,7 @@ project(':server') {
     }
     jar {
         manifest {
-            attributes 'Main-Class': 'server.ServerAppKt'
+            attributes 'Main-Class': 'Main'
         }
     }
 
@@ -41,7 +41,7 @@ project(':server') {
 
 project(':client') {
     apply plugin: 'application'
-    mainClassName = 'client.ClientAppKt'
+    mainClassName = 'Main'
 
 
     dependencies {
@@ -55,7 +55,7 @@ project(':client') {
     }
     jar {
         manifest {
-            attributes 'Main-Class': 'client.ClientAppKt'
+            attributes 'Main-Class': 'Main'
         }
     }
 
