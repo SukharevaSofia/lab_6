@@ -1,0 +1,6 @@
+rootProject.name = 'lab6S'
+
+include 'client'
+include 'server'
+include 'common'
+
