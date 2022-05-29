@@ -4,6 +4,7 @@ import exceptions.*;
 import serialize.CommandSerialize;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static tools.ConsoleUI.greeting;
 
@@ -23,11 +24,14 @@ public class CommandFinder {
       try {
 
         String[] userCommand = ConsoleUI.reader.nextLine().split(" ");
+        String userCommandCheck = Arrays.stream(userCommand)
+                .collect(Collectors.joining(""));
         List<String> commandsLen1 = List.of("help", "info", "show", "clear",
-                "print_field_descending_number_of_participants", "exit");
+                "print_field_descending_number_of_participants", "exit", "insert");
         List<String> commandsLen2 = List.of("remove_key", "remove_greater","replace_if_lower",
                 "remove_greater_key","count_greater_than_description", "filter_less_than_genre");
-
+        if (userCommandCheck.equals(""))
+          continue;
         if (userCommand.length > 2)
           throw new CommandException();
 
