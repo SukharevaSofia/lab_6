@@ -72,48 +72,6 @@ public class CommandManager {
                 .map(x -> x.getName())
                 .collect(Collectors.joining("\n"));
     }
-
-//    private String executeScript(String fileName) {
-//
-//        scriptMode = true;
-//        try {
-//            File file = new File(fileName);
-//            FileReader fileReader = new FileReader(file);
-//            bufferedReader = new BufferedReader(fileReader);
-//            String line = bufferedReader.readLine();
-//            StringBuilder result = new StringBuilder();
-//            while (line != null) {
-//                try {
-//
-//                    String[] userCommand = line.split(" ");
-//
-//                    if (userCommand.length > 2)
-//                        throw new CommandException();
-//                    if (userCommand[0].equals("execute_script") && userCommand[1].equals(fileName)) {
-//                        throw new RecursiveException();
-//                    }
-//
-//                    result.append(launchCommand(userCommand)).append("\n");
-//                    line = bufferedReader.readLine();
-//
-//                } catch (CommandException e) {
-//                    result.append("Команда не найдена").append("\n");
-//                } catch (NullPointerException e) {
-//                    result.append("Ошибка ввода").append("\n");
-//                } catch (RecursiveException e) {
-//                    return result.toString() + "Ошибка : файл рекурсивен";
-//                }
-//            }
-//            scriptMode = false;
-//            return result.toString();
-//        } catch (FileNotFoundException e) {
-//            return "Файл не найден";
-//        } catch (IOException e) {
-//            return "Ошибка";
-//        }
-//    }
-
-
     public AnswerSerialize launchCommand(CommandSerialize command) {
 
         return switch (command.getCommand()) {

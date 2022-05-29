@@ -75,22 +75,7 @@ class Server implements Runnable {
         }
     }
 
-//    private void serverStop() {
-//        try {
-//            logger.info("Завершение работы сервера...");
-//            ConsoleUI.message("Завершение работы сервера...");
-//            if (server == null) throw CloseSocketException();
-//            server !!.close()
-//            println("Работа сервера успешно завершена.")
-//            logger.info("Работа сервера успешно завершена.")
-//        } catch (e :CloseSocketException){
-//            println("Невозможно завершить работу сервера : сервер изначально был закрыт!")
-//            logger.error("Невозможно завершить работу сервера : сервер изначально был закрыт!")
-//        } catch(e :IOException){
-//            println("Произошла ошибка при завершении работы сервера!")
-//            logger.error("Произошла ошибка при завершении работы сервера!")
-//        }
-//    }
+
 
     private void openServer() {
         try {

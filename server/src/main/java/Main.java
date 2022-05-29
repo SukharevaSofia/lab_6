@@ -6,8 +6,8 @@ import tools.DataInput;
 public class Main {
     public static void main(String[] args) {
         DataInput dataInput = new DataInput();
-        String readEnv = "READENV";
-        String writeEnv = "WRITEENV";
+        final String readEnv = "READENV";
+        final String writeEnv = "WRITEENV";
         CollectionManager collectionManager = new CollectionManager(readEnv, writeEnv,dataInput);
 
         CommandManager commandManager = new CommandManager(

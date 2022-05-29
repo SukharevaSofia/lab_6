@@ -41,7 +41,7 @@ public class CommandFinder {
             if (commandsLen1.contains(userCommand[0])) {
               return new CommandSerialize(userCommand[0]);
             } else if (userCommand[0].equals("insert")) {
-              return new CommandSerialize(userCommand[0], "", dataInput.askMusicBand());
+              return new CommandSerialize(userCommand[0]);
             }
           }
 
@@ -51,9 +51,9 @@ public class CommandFinder {
                 return new CommandSerialize(userCommand[0], userCommand[1]);
               } else if (userCommand[0].equals("update")) {
                 return new CommandSerialize(userCommand[0], "band", dataInput.askMusicBand());
-              } else if (userCommand[0].equals("insert")) {
+              } /*else if (userCommand[0].equals("insert")) {
                 return new CommandSerialize(userCommand[0], "band", dataInput.askMusicBand());
-              }
+              }*/
             }
 
           default:
